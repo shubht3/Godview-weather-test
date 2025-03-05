@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Godview</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+    <!-- -->
+    <link href="src/style.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c7e1e17f8b.js" crossorigin="anonymous"></script>
+    
+    <!-- Mapbox GL JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+    
+    <!-- -->
+    <meta property="og:site_name" content="Godview">
+    <meta property="og:image" content="src/logo.png">
+    <link rel="apple-touch-icon" href="src/logo.png">
+    <link rel="shortcut icon" href="src/logo.png">
+</head>
+
+<body>
+    <script>
+        // Replace with your actual Mapbox token
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic3RyaXZlZGkzIiwiYSI6ImNtN3ZuczB0djAxbDQya3E0MWFqZGhlN3AifQ._oid4iuzqzxVy---6XvKyw';
+    </script>
+    <script src="src/interface.min.js"></script>
+    <script>MapInterface.map();</script>
+</body>
+</html>
