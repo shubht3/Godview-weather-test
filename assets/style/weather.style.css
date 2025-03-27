@@ -1,0 +1,228 @@
+/* Weather Controls */
+.weatherControl {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    z-index: 10;
+}
+
+.weatherToggleBtn {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.weatherToggleBtn:hover {
+    background-color: #f7f7f7;
+}
+
+.weatherPanel {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    padding: 15px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.weatherPanelTitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.weatherCategory {
+    margin-bottom: 15px;
+}
+
+.weatherCategoryHeader {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    font-weight: 500;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.weatherCategoryHeader i {
+    margin-right: 8px;
+}
+
+.weatherCategoryHeader.collapsed::after {
+    content: "▼";
+    margin-left: auto;
+    font-size: 12px;
+}
+
+.weatherCategoryContent {
+    padding: 10px 0;
+}
+
+.layerToggleContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 4px 0;
+}
+
+.layerToggle {
+    width: 36px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.layerToggle::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.layerToggle.active {
+    background-color: #4CAF50;
+}
+
+.layerToggle.active::after {
+    transform: translateX(16px);
+}
+
+.layerToggleLabel {
+    font-size: 13px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.layerToggleLabel i {
+    margin-right: 6px;
+}
+
+/* Time Controls */
+.timeControls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.timeControlBtn {
+    width: 28px;
+    height: 28px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    margin-right: 8px;
+}
+
+.timeSlider {
+    flex: 1;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.timeDisplay {
+    width: 40px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Weather Info Panel */
+.weatherInfoPanel {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    z-index: 9;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 260px;
+    padding: 15px;
+    display: none;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+    .weatherPanel {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .weatherInfoPanel {
+        width: 100%;
+        max-width: 260px;
+    }
+    
+    .weatherControl {
+        top: 60px;
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .weatherToggleBtn,
+    .weatherPanel,
+    .weatherInfoPanel {
+        background-color: #333;
+        color: #fff;
+    }
+    
+    .weatherPanelTitle {
+        color: #fff;
+        border-color: #555;
+    }
+    
+    .weatherCategoryHeader {
+        color: #ddd;
+        border-color: #555;
+    }
+    
+    .layerToggle {
+        background-color: #555;
+    }
+    
+    .layerToggleLabel {
+        color: #ddd;
+    }
+    
+    .timeControlBtn {
+        background-color: #444;
+        color: #ddd;
+    }
+    
+    .timeDisplay {
+        color: #ccc;
+    }
+} 

@@ -42,7 +42,7 @@ class MapInterface extends I {
         E.div(body,'','mapBox'); // create map div
         map=new mapboxgl.Map({
             container:'mapBox',
-            style:'mapbox://styles/mapbox/light-v11',
+            style:'mapbox://styles/mapbox/satellite-v9',
             center:[-73.9856,40.7128],
             zoom:3,
             projection: 'globe'
@@ -57,6 +57,24 @@ class MapInterface extends I {
                 'horizon-blend': 0.02,
                 'space-color': 'rgb(11, 11, 25)',
                 'star-intensity': 0.6
+            });
+            
+            console.log('Map style loaded, waiting for map to be fully loaded before initializing weather controls');
+            
+            // Force the map to load all tiles immediately
+            map.triggerRepaint();
+            
+            map.once('load', () => {
+                console.log('Map fully loaded, initializing weather controls');
+                // Initialize weather controls once the map is fully loaded
+                WeatherInterface.initWeatherControls();
+                
+                // Center the map on a global view initially
+                map.flyTo({
+                    center: [0, 20],
+                    zoom: 1.5,
+                    duration: 2000
+                });
             });
         });
         
